@@ -1,11 +1,9 @@
 package config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "main")
+//@ComponentScan(basePackages = "main")
 public class ProjectConfig {
 
 //    @Bean
@@ -30,13 +28,13 @@ public class ProjectConfig {
 //        return p;
 //    }
 
-    @Bean
-    String hello() {
-        return "Hello!";
-    }
-
-    @Bean
-    Integer nine() {
-        return 9;
-    }
+//    @Bean
+//    String hello() {
+//        return "Hello!";
+//    }
+//
+//    @Bean
+//    Integer nine() {
+//        return 9;
+//    }
 }
