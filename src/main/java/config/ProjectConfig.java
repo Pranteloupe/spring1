@@ -1,18 +1,34 @@
 package config;
 
-import org.example.Parrot;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan(basePackages = "main")
 public class ProjectConfig {
 
-    @Bean
-    Parrot parrot() {
-        var p = new Parrot();
-        p.setName("PranPran");
-        return p;
-    }
+//    @Bean
+//    @Primary
+//    Parrot parrot1() {
+//        var p = new Parrot();
+//        p.setName("Pran");
+//        return p;
+//    }
+//
+//    @Bean
+//    Parrot parrot2() {
+//        var p = new Parrot();
+//        p.setName("PranPran");
+//        return p;
+//    }
+//
+//    @Bean(name = "Samba")
+//    Parrot parrot3() {
+//        var p = new Parrot();
+//        p.setName("PranPranPran");
+//        return p;
+//    }
 
     @Bean
     String hello() {
