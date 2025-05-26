@@ -8,9 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = "main")
+@ComponentScan(basePackages = {"proxies", "repositories", "services"})
 public class ProjectConfig {
-
     @Bean
     public Parrot parrot() {
         var p = new Parrot();
