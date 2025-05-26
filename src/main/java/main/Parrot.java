@@ -1,9 +1,11 @@
 package main;
 
-//@Component
+import org.springframework.stereotype.Component;
+
+@Component
 public class Parrot {
 
-    private String name;
+    private String name = "Pran";
 
 //    @PostConstruct
 //    public void init() {
@@ -16,5 +18,10 @@ public class Parrot {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Parrot : " + name;
     }
 }
