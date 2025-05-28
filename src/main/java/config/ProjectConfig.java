@@ -3,14 +3,16 @@ package config;
 import main.Parrot;
 import main.Person;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScan(basePackages = {"proxies", "repositories", "services"})
+@ComponentScan(basePackages = {"proxies", "repositories", "services", "aspects"})
+@EnableAspectJAutoProxy
 public class ProjectConfig {
     @Bean
+    @Scope(BeanDefinition.SCOPE_PROTOTYPE)
+    //each time getBean() is called for this bean, a new instance of it is created
     public Parrot parrot() {
         var p = new Parrot();
         p.setName("Pran");

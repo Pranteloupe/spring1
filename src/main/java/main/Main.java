@@ -5,9 +5,12 @@ import models.Comment;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import services.CommentService;
 
+import java.util.logging.Logger;
+
 public class Main {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
+        Logger logger = Logger.getLogger("main");
 //        Parrot pranpran = new Parrot();
 //        pranpran.setName("PranPranPran");
 //
@@ -34,6 +37,12 @@ public class Main {
         comment.setText("Hello world!");
         comment.setAuthor("Pran");
 
-        commentService.publishComment(comment);
+        //String res = commentService.publishComment(comment);
+        //logger.info(res);
+        commentService.deleteComment(comment);
+
+        var p1 = context.getBean("parrot", Parrot.class);
+        var p2 = context.getBean("parrot", Parrot.class);
+        System.out.println(p1 == p2);
     }
 }
